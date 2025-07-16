@@ -1,0 +1,12 @@
+<div ng-controller="AddressesController">
+    <h2>Addresses</h2>
+    <form ng-submit="save()">
+        <input type="text" ng-model="newItem.code" placeholder="Code" required>
+        <input type="text" ng-model="newItem.street" placeholder="Street">
+        <select ng-model="newItem.province_id" ng-options="p.id as p.name for p in provinces"></select>
+        <select ng-model="newItem.district_id" ng-options="d.id as d.name for d in districts"></select>
+        <select ng-model="newItem.commune_id" ng-options="c.id as c.name for c in communes"></select>
+        <select ng-model="newItem.village_id" ng-options="v.id as v.name for v in villages"></select>
+        <button type="submit">Save</button>
+    </form>
+</div>
