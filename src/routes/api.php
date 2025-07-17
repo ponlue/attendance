@@ -15,6 +15,7 @@ use App\Models\User;
 |
 */
 Route::apiResource('user-profiles', UserProfileController::class);
+Route::apiResource('provinces', ProvinceController::class);
 
 
 Route::post('/register', function (Request $request) {

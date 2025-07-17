@@ -1,8 +1,0 @@
-app.factory('DistrictService', function($http) {
-    const baseUrl = '/api/districts';
-    return {
-        getAll: () => $http.get(baseUrl),
-        create: (data) => $http.post(baseUrl, data),
-        delete: (id) => $http.delete(`${baseUrl}/${id}`)
-    };
-});

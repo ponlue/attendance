@@ -1,5 +1,5 @@
-app.factory('ClassService', function($http) {
-    const baseUrl = '/api/classes';
+app.factory('DistrictService', function($http) {
+    const baseUrl = '/api/districts';
 
     return {
         getAll: function() {

@@ -1,18 +1,18 @@
-app.controller('DistrictsController', function($scope, DistrictService) {
+app.controller('CommunesController', function($scope, CommuneService) {
     $scope.items = [];
     $scope.newItem = {};
 
-    // Load all districts
+    // Load all communes
     $scope.load = function() {
-        DistrictService.getAll().then(function(response) {
+        CommuneService.getAll().then(function(response) {
             $scope.items = response.data;
         });
     };
 
-    // Save a new district
+    // Save a new commune
     $scope.save = function() {
         if ($scope.newItem.code && $scope.newItem.name) {
-            DistrictService.create($scope.newItem).then(function() {
+            CommuneService.create($scope.newItem).then(function() {
                 $scope.newItem = {};
                 $scope.load();
             });
@@ -21,10 +21,10 @@ app.controller('DistrictsController', function($scope, DistrictService) {
         }
     };
 
-    // Delete district
+    // Delete commune
     $scope.delete = function(id) {
-        if (confirm("Are you sure you want to delete this district?")) {
-            DistrictService.delete(id).then(function() {
+        if (confirm("Are you sure you want to delete this commune?")) {
+            CommuneService.delete(id).then(function() {
                 $scope.load();
             });
         }

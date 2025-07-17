@@ -9,23 +9,33 @@
   <script src="libs/html5-qrcode.min.js"></script>
   <script src="app.js"></script>
   <script src="services/authService.js"></script>
+  <script src="controllers/registerController.js"></script>
 
-  <script src="address/userProfileService.js"></script>
-  <script src="service/classService.js"></script>
-  <script src="service/communeService.js"></script>
-  <script src="service/districtService.js"></script>
-  <script src="services/groupService.js"></script>
   <script src="services/provinceService.js"></script>
+  <script src="controllers/provinceController.js"></script>
+
+  <script src="services/userProfileService.js"></script>
+  <script src="services/districtService.js"></script>
+  <script src="services/communeService.js"></script>
+  <script src="services/villageService.js"></script>
+  
+  <script src="services/groupService.js"></script>
   <script src="services/subjectService.js"></script>
+  <script src="services/classService.js"></script>
 
   <script src="controllers/mainController.js"></script>
   <script src="controllers/qrController.js"></script>
   <script src="controllers/loginController.js"></script>
-  <script src="controllers/registerController.js"></script>
+  
+  
   <script src="controllers/classController.js"></script>
-  <script src="controllers/districtController.js"></script>
   <script src="controllers/groupController.js"></script>
-  <script src="controllers/provinceController.js"></script>
+  <script src="controllers/subjectController.js"></script>
+  
+  
+  <script src="controllers/districtController.js"></script>
+  <script src="controllers/communeController.js"></script>
+  <script src="controllers/villageController.js"></script>
 </head>
 <body>
 
@@ -38,11 +48,14 @@
       <ul class="nav navbar-nav">
         <li ng-if="isLoggedIn"><a href="#!/attendance">Attendance</a></li>
         <li ng-if="isLoggedIn"><a href="#!/scan">Scan QR</a></li>
-        <li ng-if="isLoggedIn"><a href="#!/addresses">Address</a></li>
-        <li ng-if="isLoggedIn"><a href="#!/classes">Class</a></li>
-        <li ng-if="isLoggedIn"><a href="#!/district">Districts</a></li>
+        <li ng-if="isLoggedIn"><a href="#!/subjects">Subject</a></li>
         <li ng-if="isLoggedIn"><a href="#!/groups">Group</a></li>
+        <li ng-if="isLoggedIn"><a href="#!/classes">Class</a></li>
+        <li ng-if="isLoggedIn"><a href="#!/addresses">Address</a></li>
         <li ng-if="isLoggedIn"><a href="#!/provinces">Province</a></li>
+        <li ng-if="isLoggedIn"><a href="#!/districts">Districts</a></li>
+        <li ng-if="isLoggedIn"><a href="#!/communes">Communes</a></li>
+        <li ng-if="isLoggedIn"><a href="#!/villages">Villages</a></li>
         <li ng-if="isLoggedIn"><a href="#!/user-profiles">User Profiles</a></li>
         <li ng-if="isLoggedIn"><a href="#!/register">Register</a></li>
       </ul>

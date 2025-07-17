@@ -1,18 +1,18 @@
-app.controller('DistrictsController', function($scope, DistrictService) {
+app.controller('VillagesController', function($scope, VillageService) {
     $scope.items = [];
     $scope.newItem = {};
 
-    // Load all districts
+    // Load all villages
     $scope.load = function() {
-        DistrictService.getAll().then(function(response) {
+        VillageService.getAll().then(function(response) {
             $scope.items = response.data;
         });
     };
 
-    // Save a new district
+    // Save new village
     $scope.save = function() {
         if ($scope.newItem.code && $scope.newItem.name) {
-            DistrictService.create($scope.newItem).then(function() {
+            VillageService.create($scope.newItem).then(function() {
                 $scope.newItem = {};
                 $scope.load();
             });
@@ -21,10 +21,10 @@ app.controller('DistrictsController', function($scope, DistrictService) {
         }
     };
 
-    // Delete district
+    // Delete village
     $scope.delete = function(id) {
-        if (confirm("Are you sure you want to delete this district?")) {
-            DistrictService.delete(id).then(function() {
+        if (confirm("Are you sure you want to delete this village?")) {
+            VillageService.delete(id).then(function() {
                 $scope.load();
             });
         }

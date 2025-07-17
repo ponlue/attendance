@@ -23,17 +23,43 @@ app.config(function($routeProvider) {
       controller: 'UserProfileController'
     })
     .when('/addresses', {
-      templateUrl: 'views/user_profiles.html',
-      controller: 'UserProfileController'
+      templateUrl: 'views/addresses.html',
+      controller: 'AddressController'
     })
+
+    .when('/provinces', {
+      templateUrl: 'views/provinces.html',
+      controller: 'ProvinceController'
+    })
+
+    .when('/districts', {
+      templateUrl: 'views/districts.html',
+      controller: 'DistrictController'
+    })
+
+    .when('/communes', {
+      templateUrl: 'views/communes.html',
+      controller: 'CommuneController'
+    })
+
+        .when('/villages', {
+      templateUrl: 'views/villages.html',
+      controller: 'VillageController'
+    })
+
     .when('/classes', {
       templateUrl: 'views/classes.html',
-      controller: 'classController'
+      controller: 'ClassController'
     })
-    .when('/district', {
-      templateUrl: 'views/districts.html',
-      controller: 'districtController'
+    .when('/groups', {
+      templateUrl: 'views/groups.html',
+      controller: 'GroupController'
     })
+    .when('/subjects', {
+      templateUrl: 'views/subjects.html',
+      controller: 'SubjectController'
+    })
+
     .otherwise({
       redirectTo: '/login'  // 👈 Make login the default
     });

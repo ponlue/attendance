@@ -1,0 +1,36 @@
+<div ng-controller="ClassesController">
+    <h2>Classes</h2>
+
+    <form ng-submit="save()">
+        <input type="text" ng-model="newItem.code" placeholder="Code" required>
+        <input type="text" ng-model="newItem.name" placeholder="Name" required>
+        <input type="text" ng-model="newItem.group" placeholder="Group" required>
+        <button type="submit">Save</button>
+    </form>
+
+    <div ng-if="error" style="color:red">{{ error }}</div>
+    <div ng-if="success" style="color:green">{{ success }}</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Group</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{$index + 1}}</td>
+                <td>{{item.code}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.group}}</td>
+                <td>
+                    <button ng-click="delete(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

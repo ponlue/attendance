@@ -1,0 +1,30 @@
+<div ng-controller="ProvinceController">
+    <h2>Provinces</h2>
+
+    <form ng-submit="save()">
+        <input type="text" ng-model="newItem.code" placeholder="Code" required>
+        <input type="text" ng-model="newItem.name" placeholder="Name" required>
+        <button type="submit">Save</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{$index + 1}}</td>
+                <td>{{item.code}}</td>
+                <td>{{item.name}}</td>
+                <td>
+                    <button ng-click="delete(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<
